@@ -8,20 +8,19 @@
   <link rel="icon" type="image" href="./src/assets/pinterest.png"/>
 </head>
 <body>
-  <div class="navDiv container-fluid">
-    <nav class="navbar navbar-light bg-light p-1 container">
-      <a class="navbar-brand col-xs-2 pl-2" ><img src="./assets/pinterest.png" alt="pinterest logo" height="50px" width="50px"></a>
-      <h1 id="navHeading" class="col-xs-8">Pinterest</h1>
-      <h2 id="navHeadingBoards" class="col-xs-8 hide">Boards</h2>
-      <ul class="navbar-nav ml-2">
-        <li class="nav-item active col-xs-2 pr-2">
-          <div><button class="nav-link p-1" id="navbar-logout-button">Logout</button></div>
-        </li>
-      </ul>
+  <div class="navDiv container row">
+    <nav class="navbar navbar-light bg-light p-1">
+      <div class="col-2">
+        <img class="navbar-brand" src="./assets/pinterest.png" alt="pinterest logo" height="60px" width="50px">
+      </div>
+      <h1 class="col-8" id="navHeading">Pinterest</h1>
+      <h1 class="col-8" id="navHeadingBoards" class="hide">Boards</h1>
+      <div class="col-2 m-auto d-flex justify-content-end">
+        <button class="nav-link" id="navbar-logout-button">Logout</button>
+      </div>
     </nav> 
   </div> 
     <div id="auth"></div>
-    <div id="home"></div> 
-    <div id="boards"></div>
+    <div id="boards" class="hide"></div>
 </body>
 </html>
