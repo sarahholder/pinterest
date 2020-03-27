@@ -1,4 +1,3 @@
-  
 const printToDom = (divId, textToPrint) => {
   $(`#${divId}`).html(textToPrint);
 };
