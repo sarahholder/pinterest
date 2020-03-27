@@ -9,9 +9,9 @@ import '../styles/main.scss';
 
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
-  authData.checkLoginStatus();
-  auth.loginButton();
   myNavbar.logoutEvent();
+  auth.loginButton();
+  authData.checkLoginStatus();
 };
 
 init();
