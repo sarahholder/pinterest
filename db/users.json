@@ -1,0 +1,14 @@
+{
+	"user1" : {
+		"name": "sarah",
+		"uid": "o1m9ONt4odQs4pl5XRYrmGHr7UX2"
+	},
+	"user2" : {
+		"name": "luke",
+		"uid": "12345"
+	},
+	"user3" : {
+		"name": "mary",
+		"uid": "67890"
+	}
+}

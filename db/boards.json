@@ -1,0 +1,38 @@
+{
+	"boardsPins1": {
+		"boardId": "board1",
+    "name": "funny",
+    "description": "Things that make me laugh",
+    "uid": ""
+	},
+	"BoardPins2": {
+		"boardId": "board2",
+    "name": "quotes",
+    "description": "Things that make me laugh",
+    "uid": ""
+	},
+	"BoardPins3": {
+		"boardId": "board3",
+    "name": "travel",
+    "description": "Oh, the Places You Will Go",
+    "uid": ""
+	},
+	"BoardPins4": {
+    "boardId": "board4",
+    "name": "DIY",
+    "description": "Things to try",
+    "uid": ""
+  },
+  "BoardPins5": {
+		"boardId": "board3",
+    "name": "travel",
+    "description": "Oh, the Places You Will Go",
+    "uid": ""
+  },
+  "BoardPins6": {
+		"boardId": "board3",
+    "name": "travel",
+    "description": "Oh, the Places You Will Go",
+    "uid": ""
+	}
+}

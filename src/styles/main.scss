@@ -14,12 +14,13 @@ body {
   min-width: 100%;
   margin: 0;
   padding: 0;
+  border-bottom: 1px solid rgb(225, 225, 225);
 }
 h1 {
   font-family: 'Beth Ellen', cursive;
   text-align: center;
 }
-#home, #boards {
+#homeDiv, #boardsDiv, #auth {
   text-align: center;
 }
 .loginBtn {
