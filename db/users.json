@@ -1,14 +1,14 @@
 {
 	"user1" : {
-		"name": "sarah",
+		"name": "Sarah",
 		"uid": "o1m9ONt4odQs4pl5XRYrmGHr7UX2"
 	},
 	"user2" : {
-		"name": "luke",
+		"name": "Zoe",
 		"uid": "12345"
 	},
 	"user3" : {
-		"name": "mary",
+		"name": "Mary",
 		"uid": "67890"
 	}
 }

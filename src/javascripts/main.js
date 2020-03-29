@@ -7,6 +7,7 @@ import myNavbar from './components/myNavbar/myNavbar';
 import 'bootstrap';
 import '../styles/main.scss';
 
+
 const init = () => {
   firebase.initializeApp(apiKeys.firebaseKeys);
   myNavbar.logoutEvent();
