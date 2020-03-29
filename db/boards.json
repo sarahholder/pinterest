@@ -2,25 +2,21 @@
 	"codeJokes": {
     "name": "Code Jokes Board",
     "description": "Things that make me laugh",
-    "uid": "b01",
     "img": "https://lh3.googleusercontent.com/Sd_hH6RrGECv1so4LCJP-eP4gl1FwK-Ls-PEVq9EgGzCrVFN8pyaSLqz5jRcWBSTW2LnEY1g9ZDVv5a72Mb3y4oZ8zShnG3wAAivSwyeZojtWrW52SdWjzdq7LqzCrGRg98nELOZrQ=w2400"
 	},
 	"animals": {
     "name": "Animal Board",
     "description": "My animals",
-    "uid": "b02",
     "img": "https://lh3.googleusercontent.com/e7gHkrokf9EW95u1q_ey9wNXc9p623DiRxuR1ATaRB3p6EmlQ5mH0Adw9Ju6PcPvcS-FGy8Z9O9UZIQ_Ai7O2vyakPBf_ec7yf_84oGBOkFcyd6VCo66NF_xAmBVnUX7khnytZ6-VA=w2400"
 	},
 	"getOutside": {
     "name": "Get Outside Board",
     "description": "Explore the Outdoors",
-    "uid": "b03",
     "img": "https://lh3.googleusercontent.com/cUeFliF_FZ7mAPH_rQUirUZM9ep33XCCJqwu6dMcoBUmMesP9oU9BE2BotEcbGXiOm3mX9W8w1qaU0VtDFG-Ov9tShnPE56FDnvZgtZO6u5WO01CnqojHO9XEKrwCX0GaJZGYu7fkQ=w2400"
 	},
 	"travel": {
     "name": "Places to Visit Board",
     "description": "Oh! The Places You'll Go!",
-    "uid": "b04",
     "img": "https://lh3.googleusercontent.com/ST1Fln5W9YNZekKNJovd1JQWF9EUt3iQ4LmTcoae9Gc4heH73wxGMdKa7xHbxmS1n0TiqVUoRTG_m_iAO3svCyU5bYSM452IHMDFaAB1sDNcHArpFcvhAKI2nFtV45FEI2yq_2Ts9g=w2400"
     }
 }

@@ -5,10 +5,11 @@
 	},
 	"user2" : {
 		"name": "Zoe",
-		"uid": "12345"
+		"uid": "zoe"
 	},
 	"user3" : {
 		"name": "Mary",
-		"uid": "67890"
+		"uid": "mary"
 	}
+	
 }
