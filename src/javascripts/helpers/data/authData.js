@@ -1,6 +1,5 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-
 import boards from '../../components/boards/boards';
 
 const authDiv = $('#auth');
@@ -17,7 +16,7 @@ const checkLoginStatus = () => {
       logoutButton.removeClass('hide');
       navHeadingDiv.addClass('hide');
       navHeadingBoardsDiv.removeClass('hide');
-      boards.showBoards();
+      boards.printBoards();
     } else {
       authDiv.removeClass('hide');
       boardsDiv.addClass('hide');
