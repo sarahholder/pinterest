@@ -18,5 +18,20 @@
     "name": "Places to Visit Board",
     "description": "Oh! The Places You'll Go!",
     "img": "https://lh3.googleusercontent.com/ST1Fln5W9YNZekKNJovd1JQWF9EUt3iQ4LmTcoae9Gc4heH73wxGMdKa7xHbxmS1n0TiqVUoRTG_m_iAO3svCyU5bYSM452IHMDFaAB1sDNcHArpFcvhAKI2nFtV45FEI2yq_2Ts9g=w2400"
+    },
+	"applePie": {
+    "name": "Please Bring Pie",
+    "description": "My favorite is Apple",
+    "img": "https://i.pinimg.com/564x/4c/7f/9c/4c7f9cbbeefd4931654ad5aeb082f214.jpg"
+    },
+	"madCats": {
+    "name": "Cat are Cool",
+    "description": "These speak to my soul",
+    "img": "https://i.pinimg.com/564x/4f/b7/75/4fb775154a4171715b4b5487c3e463f1.jpg"
+    },
+	"traitor": {
+    "name": "Bye--Bye Luke",
+    "description": "Homage to Luke",
+    "img": "https://pm1.narvii.com/6468/3b948b6fcb5e5e7eeb2aa122c4d7615ce0394bb4_00.jpg"
     }
 }
