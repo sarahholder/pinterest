@@ -15,70 +15,14 @@
       </div>
       <h1 class="col-8" id="navHeading">Pinterest</h1>
       <h1 class="col-8" id="navHeadingBoards" class="hide">Boards</h1>
+      <h1 class="col-8" id="navHeadingPins" class="hide">Pins</h1>
       <div class="col-2 m-auto d-flex justify-content-end">
         <button class="nav-link" id="navbar-logout-button">Logout</button>
       </div>
     </nav> 
   </div> 
     <div id="auth"></div>
-    <div id="boards" class="hide"></div>
-    <!-- <div class="card-columns">
-      <div class="card">
-        <img src="https://lh3.googleusercontent.com/bdlPoJ0_19Cxvdsm6wjSTh6lFQznKKdmtDthmzjlStNbXYlNfcbKtNnuoft7YMhUGRYV33e4SxEqOAZ7i6P6Wh0rpbiLJZ139uCrzAqec_wOCbOyJ6SR3elCIACxWcD03-FLtXCVPzKoF15A1xqMXaMAhybm9zC7f2ZqXn6strShqvcnxSlOZZbukBd3YhAsOVbnozQ7FTdd1M1CAITMlPHbNhDbUVPk6JAIMWcr8CrMtc-MGHpkgn0P7Vw-RwIW_vwdSYpPNhMkdF1HAj2-tarDMkEUb77zzHv70Rflx7xXab-9POOlSNV1zEnGDVl8au6YZ61xuHpYuw-fXpMKGVBapuOZUa0nefwhIKb10kqxRKDx38VzmFTjia_5BQPUnPyG9ukAkXXOnPXB4gEWR48vN13XY0z0k9ollNJVe0flFb6vbcpqnWw9cdeyfXxNWYe8FYo6VC7rZWG-e-0pLin5M4nirIY3XZN49Ckbuz0jFAIQMYlaiBYzmaQYSLpObS1YfhB9gZ6RCymRI-qyb6cnKvYx1W_brbL5y32-I9C2RbzK_R0Yk8X-uaV1EffeE8viK0HqB4SgVLAcaQPq_ArJwMuCBLZ9E0xnn2VfuvXqQhUtuTXSfQQaYTU9fqRNYTwtOV_8cWEDMaLX8tpnzKJhOUelZ82-f7lARreJso7CLuIFOGlYJSAX1FaLuQ=w474-h642-no" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card Title</h5>
-        </div>
-      </div>
-          <div class="card">
-            <img src="https://lh3.googleusercontent.com/OKtalJFhervlMmv3lrxCqXJ8HuvTt70NlQENQB3jja_dU-PanNrChCnxrUd6w616x-BeZF3VgmiqlZ8R5-GHtFdSToZzY6d7IdUhFAqNdanrAQRWNZ66mAxg25p3r9TaXHKjXbB7MdC6iWon3qfqB_bR5HNUP7aCt2pn5HA28JTGQTqBrUeEdEsgcRFYXnnbjJyxEM_iviE9W1eGDTJPRJY_DBT38QMwzD9gFv9o_uZ54a5qCwqXh6A6PQgxVcE62d1_6NATRbR7N8B63EIzOSRsINjDobfM_1S_epehDyKjxAxGL2TyAcpC7kKkiKqLpBPSTFv0xlv4D15bReABXf30EgzVe1tfHT-lWvIZnIfOA5e1doYMyhE86GKu_rnfDdYwASlhjJcegqOCCGJUvCpaXwSifhFfxRtCtg_LrMQ_Q28IxdhBQv6Ulo9al1eWIphhRAAfDpsiNrRs8KJeFAtNTIV5dWVcYGoiqC0JhWVzWsRKr9IsYNqUA6_sXZfcsMp0sljqjyRpk9QhRVSI7HkVzQdxJREA7yFU6kHMlkpaaXshSlQvmFtqp1uPPocG68ECin_i2GnsNzoKmOsEcf7AWL1GGKFgiwkmCMi9MwA5iI0uFJb3Z7wdQYZts44hGWQBoaK4aj8DYwlhZB12tkrWh_gaYxcCQB9HDfrm5LIh64T6MYWKQqPqQnk8IA=w473-h471-no" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card Title</h5>
-            </div>
-          </div>  
-        <div class="card">
-          <img src="https://lh3.googleusercontent.com/bdlPoJ0_19Cxvdsm6wjSTh6lFQznKKdmtDthmzjlStNbXYlNfcbKtNnuoft7YMhUGRYV33e4SxEqOAZ7i6P6Wh0rpbiLJZ139uCrzAqec_wOCbOyJ6SR3elCIACxWcD03-FLtXCVPzKoF15A1xqMXaMAhybm9zC7f2ZqXn6strShqvcnxSlOZZbukBd3YhAsOVbnozQ7FTdd1M1CAITMlPHbNhDbUVPk6JAIMWcr8CrMtc-MGHpkgn0P7Vw-RwIW_vwdSYpPNhMkdF1HAj2-tarDMkEUb77zzHv70Rflx7xXab-9POOlSNV1zEnGDVl8au6YZ61xuHpYuw-fXpMKGVBapuOZUa0nefwhIKb10kqxRKDx38VzmFTjia_5BQPUnPyG9ukAkXXOnPXB4gEWR48vN13XY0z0k9ollNJVe0flFb6vbcpqnWw9cdeyfXxNWYe8FYo6VC7rZWG-e-0pLin5M4nirIY3XZN49Ckbuz0jFAIQMYlaiBYzmaQYSLpObS1YfhB9gZ6RCymRI-qyb6cnKvYx1W_brbL5y32-I9C2RbzK_R0Yk8X-uaV1EffeE8viK0HqB4SgVLAcaQPq_ArJwMuCBLZ9E0xnn2VfuvXqQhUtuTXSfQQaYTU9fqRNYTwtOV_8cWEDMaLX8tpnzKJhOUelZ82-f7lARreJso7CLuIFOGlYJSAX1FaLuQ=w474-h642-no" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card Title</h5>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://lh3.googleusercontent.com/IbrTdBAq774Tpm0_ffZ_4p-lqsGjrD1dx6xWx7LqBI_DtfC0CaGiPyQGIChmqqvjnnuLHBxe9UATU4QFdEjPv2M22V7QQBiiGd61w60Yc9qYHWotIIlqFBOWMWmIJDcRyJf8nWJF-3vUPJhKrd8mtb_DLQOnRrm6h_CMMqczMq6Fn1TxBK0jQVZGGuKGFA1vI3sS6W8Nww3sV32BOr8Q7zHY6e0gA9Tn-TXRXio50J1j13_ar67pjFvsX1bRECx-hiry4HRnlPjJaAQUGim4jELUwVUiaeGgOqvbIEKiwrSAX4k8q0YXD__hgFhqM2pRX-hcUzALNYEWooMC9k_PWQq3jNUnUfkQHHb-Fj_Mu_A92fRFM_R_HYUAN0MhC_N8RhkdkPAidcXM-w2S045-VUeHz3P_HjDb4yfTrEqVYu9PgsKVCiTxGcYGuxwF9rALM2kX4f5jHUPlSgBJm3ywyZQeIXOEqk_R3Y_gb9rM2m32WbntyggeeZe6-7QSN8EncDsykuA_6kWMvdME8qOKERSgkPjj7r9MvoeDIQnuOrdkuW8pYuM0hFw7TGl-Zjkg43uka1GYeePNHiPlhphJCEJ-fASY9JyH3s7hpXUeOgcLgCOwwFJDYE_yI93CypJHybUJzk4-C1FIvVTAg6iEgDskQ7w6sHcc3iooZhmTQnxfE2qeq5Z6ZEe-ZUuBXA=w131-h174-no" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card Title</h5>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://lh3.googleusercontent.com/IbrTdBAq774Tpm0_ffZ_4p-lqsGjrD1dx6xWx7LqBI_DtfC0CaGiPyQGIChmqqvjnnuLHBxe9UATU4QFdEjPv2M22V7QQBiiGd61w60Yc9qYHWotIIlqFBOWMWmIJDcRyJf8nWJF-3vUPJhKrd8mtb_DLQOnRrm6h_CMMqczMq6Fn1TxBK0jQVZGGuKGFA1vI3sS6W8Nww3sV32BOr8Q7zHY6e0gA9Tn-TXRXio50J1j13_ar67pjFvsX1bRECx-hiry4HRnlPjJaAQUGim4jELUwVUiaeGgOqvbIEKiwrSAX4k8q0YXD__hgFhqM2pRX-hcUzALNYEWooMC9k_PWQq3jNUnUfkQHHb-Fj_Mu_A92fRFM_R_HYUAN0MhC_N8RhkdkPAidcXM-w2S045-VUeHz3P_HjDb4yfTrEqVYu9PgsKVCiTxGcYGuxwF9rALM2kX4f5jHUPlSgBJm3ywyZQeIXOEqk_R3Y_gb9rM2m32WbntyggeeZe6-7QSN8EncDsykuA_6kWMvdME8qOKERSgkPjj7r9MvoeDIQnuOrdkuW8pYuM0hFw7TGl-Zjkg43uka1GYeePNHiPlhphJCEJ-fASY9JyH3s7hpXUeOgcLgCOwwFJDYE_yI93CypJHybUJzk4-C1FIvVTAg6iEgDskQ7w6sHcc3iooZhmTQnxfE2qeq5Z6ZEe-ZUuBXA=w131-h174-no" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card Title</h5>
-          </div>
-        </div>
-        <div class="card">
-          <img src="https://lh3.googleusercontent.com/OKtalJFhervlMmv3lrxCqXJ8HuvTt70NlQENQB3jja_dU-PanNrChCnxrUd6w616x-BeZF3VgmiqlZ8R5-GHtFdSToZzY6d7IdUhFAqNdanrAQRWNZ66mAxg25p3r9TaXHKjXbB7MdC6iWon3qfqB_bR5HNUP7aCt2pn5HA28JTGQTqBrUeEdEsgcRFYXnnbjJyxEM_iviE9W1eGDTJPRJY_DBT38QMwzD9gFv9o_uZ54a5qCwqXh6A6PQgxVcE62d1_6NATRbR7N8B63EIzOSRsINjDobfM_1S_epehDyKjxAxGL2TyAcpC7kKkiKqLpBPSTFv0xlv4D15bReABXf30EgzVe1tfHT-lWvIZnIfOA5e1doYMyhE86GKu_rnfDdYwASlhjJcegqOCCGJUvCpaXwSifhFfxRtCtg_LrMQ_Q28IxdhBQv6Ulo9al1eWIphhRAAfDpsiNrRs8KJeFAtNTIV5dWVcYGoiqC0JhWVzWsRKr9IsYNqUA6_sXZfcsMp0sljqjyRpk9QhRVSI7HkVzQdxJREA7yFU6kHMlkpaaXshSlQvmFtqp1uPPocG68ECin_i2GnsNzoKmOsEcf7AWL1GGKFgiwkmCMi9MwA5iI0uFJb3Z7wdQYZts44hGWQBoaK4aj8DYwlhZB12tkrWh_gaYxcCQB9HDfrm5LIh64T6MYWKQqPqQnk8IA=w473-h471-no" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card Title</h5>
-          </div>
-        </div>  
-      <div class="card">
-        <img src="https://lh3.googleusercontent.com/bdlPoJ0_19Cxvdsm6wjSTh6lFQznKKdmtDthmzjlStNbXYlNfcbKtNnuoft7YMhUGRYV33e4SxEqOAZ7i6P6Wh0rpbiLJZ139uCrzAqec_wOCbOyJ6SR3elCIACxWcD03-FLtXCVPzKoF15A1xqMXaMAhybm9zC7f2ZqXn6strShqvcnxSlOZZbukBd3YhAsOVbnozQ7FTdd1M1CAITMlPHbNhDbUVPk6JAIMWcr8CrMtc-MGHpkgn0P7Vw-RwIW_vwdSYpPNhMkdF1HAj2-tarDMkEUb77zzHv70Rflx7xXab-9POOlSNV1zEnGDVl8au6YZ61xuHpYuw-fXpMKGVBapuOZUa0nefwhIKb10kqxRKDx38VzmFTjia_5BQPUnPyG9ukAkXXOnPXB4gEWR48vN13XY0z0k9ollNJVe0flFb6vbcpqnWw9cdeyfXxNWYe8FYo6VC7rZWG-e-0pLin5M4nirIY3XZN49Ckbuz0jFAIQMYlaiBYzmaQYSLpObS1YfhB9gZ6RCymRI-qyb6cnKvYx1W_brbL5y32-I9C2RbzK_R0Yk8X-uaV1EffeE8viK0HqB4SgVLAcaQPq_ArJwMuCBLZ9E0xnn2VfuvXqQhUtuTXSfQQaYTU9fqRNYTwtOV_8cWEDMaLX8tpnzKJhOUelZ82-f7lARreJso7CLuIFOGlYJSAX1FaLuQ=w474-h642-no" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card Title</h5>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://lh3.googleusercontent.com/IbrTdBAq774Tpm0_ffZ_4p-lqsGjrD1dx6xWx7LqBI_DtfC0CaGiPyQGIChmqqvjnnuLHBxe9UATU4QFdEjPv2M22V7QQBiiGd61w60Yc9qYHWotIIlqFBOWMWmIJDcRyJf8nWJF-3vUPJhKrd8mtb_DLQOnRrm6h_CMMqczMq6Fn1TxBK0jQVZGGuKGFA1vI3sS6W8Nww3sV32BOr8Q7zHY6e0gA9Tn-TXRXio50J1j13_ar67pjFvsX1bRECx-hiry4HRnlPjJaAQUGim4jELUwVUiaeGgOqvbIEKiwrSAX4k8q0YXD__hgFhqM2pRX-hcUzALNYEWooMC9k_PWQq3jNUnUfkQHHb-Fj_Mu_A92fRFM_R_HYUAN0MhC_N8RhkdkPAidcXM-w2S045-VUeHz3P_HjDb4yfTrEqVYu9PgsKVCiTxGcYGuxwF9rALM2kX4f5jHUPlSgBJm3ywyZQeIXOEqk_R3Y_gb9rM2m32WbntyggeeZe6-7QSN8EncDsykuA_6kWMvdME8qOKERSgkPjj7r9MvoeDIQnuOrdkuW8pYuM0hFw7TGl-Zjkg43uka1GYeePNHiPlhphJCEJ-fASY9JyH3s7hpXUeOgcLgCOwwFJDYE_yI93CypJHybUJzk4-C1FIvVTAg6iEgDskQ7w6sHcc3iooZhmTQnxfE2qeq5Z6ZEe-ZUuBXA=w131-h174-no" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card Title</h5>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://lh3.googleusercontent.com/IbrTdBAq774Tpm0_ffZ_4p-lqsGjrD1dx6xWx7LqBI_DtfC0CaGiPyQGIChmqqvjnnuLHBxe9UATU4QFdEjPv2M22V7QQBiiGd61w60Yc9qYHWotIIlqFBOWMWmIJDcRyJf8nWJF-3vUPJhKrd8mtb_DLQOnRrm6h_CMMqczMq6Fn1TxBK0jQVZGGuKGFA1vI3sS6W8Nww3sV32BOr8Q7zHY6e0gA9Tn-TXRXio50J1j13_ar67pjFvsX1bRECx-hiry4HRnlPjJaAQUGim4jELUwVUiaeGgOqvbIEKiwrSAX4k8q0YXD__hgFhqM2pRX-hcUzALNYEWooMC9k_PWQq3jNUnUfkQHHb-Fj_Mu_A92fRFM_R_HYUAN0MhC_N8RhkdkPAidcXM-w2S045-VUeHz3P_HjDb4yfTrEqVYu9PgsKVCiTxGcYGuxwF9rALM2kX4f5jHUPlSgBJm3ywyZQeIXOEqk_R3Y_gb9rM2m32WbntyggeeZe6-7QSN8EncDsykuA_6kWMvdME8qOKERSgkPjj7r9MvoeDIQnuOrdkuW8pYuM0hFw7TGl-Zjkg43uka1GYeePNHiPlhphJCEJ-fASY9JyH3s7hpXUeOgcLgCOwwFJDYE_yI93CypJHybUJzk4-C1FIvVTAg6iEgDskQ7w6sHcc3iooZhmTQnxfE2qeq5Z6ZEe-ZUuBXA=w131-h174-no" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Card Title</h5>
-        </div>
-      </div>
-      </div>    -->
-          
-
+    <div id="boards" class="hide pl-5 pr-5"></div>
+    <div id="pins" class="pl-5 pr-5"></div>       
 </body>
 </html>

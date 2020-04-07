@@ -6,7 +6,6 @@
 }
 body {
   background-color: antiquewhite;
-  
   // font-family: 'Srisakdi', cursive;
 }
 .container {
@@ -14,6 +13,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 .navbar {
   min-width: 100%;
   margin: 0;
@@ -27,7 +27,8 @@ h1 {
 p {
   font-family: 'Mali', cursive;
 }
-#home, #boards, #auth {
+
+#home, #boards, #auth, .card {
   text-align: center;
 }
 .loginBtn {

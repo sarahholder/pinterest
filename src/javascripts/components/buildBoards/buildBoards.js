@@ -1,6 +1,6 @@
 const buildBoards = (board) => {
   let domString = '';
-  domString += `<div id="${board.id}" class="card">`;
+  domString += `<div id="${board.id}" class="card board">`;
   domString += '  <div class="card-body">';
   domString += `    <h5 class="card-title">${board.name}</h5>`;
   domString += `    <p class="card-text">${board.description}</p>`;
