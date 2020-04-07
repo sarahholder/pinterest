@@ -1,12 +1,22 @@
 import pinsData from '../../helpers/data/pinsData';
 import utils from '../../helpers/utils';
+import './pins.scss';
+
+const closePinsView = () => {
+  $('#boards').removeClass('hide');
+  $('#navHeadingPins').addClass('hide');
+  $('#navHeadingBoards').removeClass('hide');
+  $('#pins').addClass('hide');
+};
+
+$('body').on('click', '.goBack', closePinsView);
 
 const printPins = (boardId) => {
   pinsData.getPinsByBoardId(boardId)
     .then((response) => {
       const selectedPins = response;
       let domString = '';
-      domString += '<button class="goBack"><i class="goBack button m-3 far fa-arrow-alt-circle-left fa-2x"></i></button>';
+      domString += '<i class="m-3 goBack far fa-arrow-alt-circle-left fa-2x"></i>';
       domString += '<div class="card-columns justify-content-center ml-5 mr-5">';
       selectedPins.forEach((selectedPin) => {
         domString += `<div id="${selectedPin.id}" class="card">`;
@@ -19,4 +29,4 @@ const printPins = (boardId) => {
     .catch((err) => console.error('Problem with printPins', err));
 };
 
-export default { printPins };
+export default { printPins, closePinsView };
