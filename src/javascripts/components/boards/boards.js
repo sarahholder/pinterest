@@ -12,13 +12,12 @@ const navHeadingPinsDiv = $('#navHeadingPins');
 
 const boardEvent = (e) => {
   const selectedBoardId = e.target.closest('.card').id;
-  console.error('Selected Board Id is: ', selectedBoardId);
   boardsDiv.addClass('hide');
   navHeadingBoardsDiv.addClass('hide');
   singleBoard.printPins(selectedBoardId);
   navHeadingPinsDiv.removeClass('hide');
+  $('#pins').removeClass('hide');
 };
-
 const printBoards = () => {
   const { uid } = firebase.auth().currentUser;
   boardData.getBoards(uid)
