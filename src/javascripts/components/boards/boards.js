@@ -3,8 +3,9 @@ import 'firebase/auth';
 import utils from '../../helpers/utils';
 import boardData from '../../helpers/data/boardData';
 import buildBoardsComp from '../buildBoards/buildBoards';
-import './boards.scss';
 import singleBoard from '../pins/pins';
+import pinsData from '../../helpers/data/pinsData';
+import './boards.scss';
 
 const boardsDiv = $('#boards');
 const navHeadingBoardsDiv = $('#navHeadingBoards');
@@ -18,6 +19,23 @@ const boardEvent = (e) => {
   navHeadingPinsDiv.removeClass('hide');
   $('#pins').removeClass('hide');
 };
+
+const deleteBoardEvent = (e) => {
+  const selectedBoardId = e.target.closest('.card').id;
+  boardData.deleteBoard(selectedBoardId)
+    .then(() => {
+      pinsData.getPinsByBoardId(selectedBoardId)
+        .then((selectedPins) => {
+          selectedPins.forEach((pin) => {
+            pinsData.deletePin(pin.id);
+          });
+          // eslint-disable-next-line no-use-before-define
+          printBoards();
+        })
+        .catch((err) => console.error('cannot delete entire board', err));
+    });
+};
+
 const printBoards = () => {
   const { uid } = firebase.auth().currentUser;
   boardData.getBoards(uid)
@@ -31,6 +49,7 @@ const printBoards = () => {
       domString += '</div>';
       utils.printToDom('boards', domString);
       $('body').on('click', '.show-pins', boardEvent);
+      $('body').on('click', '.delete-btn', deleteBoardEvent);
     })
     .catch((err) => console.error('problem with printBoards', err));
 };

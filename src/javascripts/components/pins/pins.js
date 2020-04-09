@@ -9,7 +9,7 @@ const closePinsView = () => {
   $('#pins').addClass('hide');
 };
 
-const removePin = (e) => {
+const deletePinEvent = (e) => {
   const selectedPin = e.target.closest('.card').id;
   const selectedBoardId = e.target.closest('.board-id').id;
   pins.deletePin(selectedPin)
@@ -19,9 +19,6 @@ const removePin = (e) => {
     })
     .catch((err) => console.error('cant delete', err));
 };
-
-$('body').on('click', '.goBack', closePinsView);
-$('body').on('click', '.delete-pin', removePin);
 
 const printPins = (boardId) => {
   pins.getPinsByBoardId(boardId)
@@ -44,6 +41,8 @@ const printPins = (boardId) => {
         domString += '</div>';
       });
       utils.printToDom('pins', domString);
+      $('body').on('click', '.goBack', closePinsView);
+      $('body').on('click', '.delete-pin', deletePinEvent);
     })
     .catch((err) => console.error('Problem with printPins', err));
 };

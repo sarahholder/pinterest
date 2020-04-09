@@ -8,7 +8,7 @@ const buildBoards = (board) => {
   domString += `  <img src="${board.img}" class="card-img-bottom" alt="...">`;
   domString += '     <div class="card-footer">';
   domString += '        <button class="show-pins col-5"><i class="far fa-eye"></i></button>';
-  domString += '        <button id="hello" class="delete-btn col-5"><i class="far fa-trash-alt"></i></button>';
+  domString += '        <button class="delete-btn col-5"><i class="far fa-trash-alt"></i></button>';
   domString += '     </div>';
   domString += '</div>';
   return domString;
