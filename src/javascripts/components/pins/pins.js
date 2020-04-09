@@ -17,7 +17,7 @@ const deletePinEvent = (e) => {
       // eslint-disable-next-line no-use-before-define
       printPins(selectedBoardId);
     })
-    .catch((err) => console.error('cant delete', err));
+    .catch((err) => console.error('cannot delete pin', err));
 };
 
 const printPins = (boardId) => {
