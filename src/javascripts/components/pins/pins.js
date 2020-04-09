@@ -1,4 +1,4 @@
-import pinsData from '../../helpers/data/pinsData';
+import pins from '../../helpers/data/pinsData';
 import utils from '../../helpers/utils';
 import './pins.scss';
 
@@ -9,10 +9,22 @@ const closePinsView = () => {
   $('#pins').addClass('hide');
 };
 
+const removePin = (e) => {
+  const selectedPin = e.target.closest('.card').id;
+  const selectedBoardId = e.target.closest('.board-id').id;
+  pins.deletePin(selectedPin)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      printPins(selectedBoardId);
+    })
+    .catch((err) => console.error('cant delete', err));
+};
+
 $('body').on('click', '.goBack', closePinsView);
+$('body').on('click', '.delete-pin', removePin);
 
 const printPins = (boardId) => {
-  pinsData.getPinsByBoardId(boardId)
+  pins.getPinsByBoardId(boardId)
     .then((response) => {
       const selectedPins = response;
       let domString = '';
@@ -21,7 +33,14 @@ const printPins = (boardId) => {
       selectedPins.forEach((selectedPin) => {
         domString += `<div id="${selectedPin.id}" class="card">`;
         domString += `  <img src="${selectedPin.imageUrl}" class="card-img-bottom alt="...">`;
-        domString += `  <p class="card-description pt-3">${selectedPin.name}</p>`;
+        domString += '<div class="card-body">';
+        domString += '  <div class="row">';
+        domString += `    <p class="col-9 p-0 m-0 card-description">${selectedPin.name}</p>`;
+        domString += '    <div class= "col-3 p-0 m-0">';
+        domString += `      <button id="${selectedPin.boardId}" class="board-id delete-btn"><i class="delete-pin far fa-trash-alt"></i></button>`;
+        domString += '    </div>';
+        domString += '  </div>';
+        domString += '</div>';
         domString += '</div>';
       });
       utils.printToDom('pins', domString);

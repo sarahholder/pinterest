@@ -30,7 +30,7 @@ const printBoards = () => {
       });
       domString += '</div>';
       utils.printToDom('boards', domString);
-      $('body').on('click', '.board', boardEvent);
+      $('body').on('click', '.show-pins', boardEvent);
     })
     .catch((err) => console.error('problem with printBoards', err));
 };
