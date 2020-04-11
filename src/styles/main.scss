@@ -26,12 +26,19 @@ h1 {
   font-family: 'Beth Ellen', cursive;
   text-align: center;
 }
-p {
+p, .forn-group{
   font-family: 'Mali', cursive;
 }
-
-#home, #boards, #auth, .card {
+#home, #boards, #auth, .card, #pins {
   text-align: center;
+}
+#floater {
+  position: fixed;
+  top: 65px;
+  left: 10px;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  z-index: 1;
 }
 .loginBtn {
   text-align: center;

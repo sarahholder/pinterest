@@ -41,8 +41,33 @@ const printBoards = () => {
   boardData.getBoards(uid)
     .then((boards) => {
       let domString = '';
-      domString += '<h2 class="text-center"></h2>';
-      domString += '<div class="card-columns justify-content-center m-5">';
+      domString += `
+      <div class="accordion" id="accordionExample">
+      <h2 class="mb-0">
+        <button class="btn" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <i class="fas fa-plus-circle"></i> add Board</button>
+      </h2>
+      </div>
+      <div class="form m-2">
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class= "text-left row d-flex flex-wrap">
+            <div class="form-group col-md-4">
+              <label class="" for="add-board-title">Board Title:</label>
+              <input type="text" class="form-control" id="add-board-title" placeholder="add board title here">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="add-board-desc">Board Description:</label>
+              <input type="text" class="form-control" id="add-board-desc" placeholder="add board description here">
+            </div>
+            <div class="form-group col-md-4">
+              <label for="add-board-img">Board Image:</label>
+              <input type="text" class="form-control" id="add-board-img" placeholder="add board image link here">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </div>
+      </div>`;
+      domString += '<div class="card-columns justify-content-center">';
       boards.forEach((board) => {
         domString += buildBoardsComp.buildBoards(board);
       });
