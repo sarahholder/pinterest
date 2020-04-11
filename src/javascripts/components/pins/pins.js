@@ -23,13 +23,11 @@ const deletePinEvent = (e) => {
 const makeAPin = (e) => {
   const selectedBoardId = e.target.closest('.form').id;
   e.preventDefault();
-  // const newPin = () => {
   const newPin = {
     boardId: selectedBoardId,
     name: $('#add-pin-title').val(),
     imageUrl: $('#add-pin-img').val(),
   };
-  // save to firebase
   pins.addPin(newPin)
     .then(() => {
       // eslint-disable-next-line no-use-before-define
