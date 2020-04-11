@@ -20,6 +20,24 @@ const deletePinEvent = (e) => {
     .catch((err) => console.error('cannot delete pin', err));
 };
 
+const makeAPin = (e) => {
+  const selectedBoardId = e.target.closest('.form').id;
+  e.preventDefault();
+  // const newPin = () => {
+  const newPin = {
+    boardId: selectedBoardId,
+    name: $('#add-pin-title').val(),
+    imageUrl: $('#add-pin-img').val(),
+  };
+  // save to firebase
+  pins.addPin(newPin)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      printPins(selectedBoardId);
+    })
+    .catch((err) => console.error('could not add pin', err));
+};
+
 const printPins = (boardId) => {
   pins.getPinsByBoardId(boardId)
     .then((response) => {
@@ -33,11 +51,11 @@ const printPins = (boardId) => {
           <i class="fas fa-plus-circle"></i> add Pin</button>
         </h2>
       </div>
-      <div class="form m-2">
+      <div class="form m-2" id="${boardId}">
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class= "text-left row d-flex flex-wrap justify-content-center">
             <div class="form-group col-md-4">
-              <label class="" for="add-pin-title">Pin Title:</label>
+              <label for="add-pin-title">Pin Title:</label>
               <input type="text" class="form-control" id="add-pin-title" placeholder="add pin title here">
             </div>
             <div class="form-group col-md-4">
@@ -45,7 +63,7 @@ const printPins = (boardId) => {
               <input type="text" class="form-control" id="add-pin-img" placeholder="add pin image link here">
             </div>
           </div>
-          <button type="submit" class="btn btn-danger">Submit</button>
+          <button id="addPin" type="submit" class="btn btn-danger">Submit</button>
         </div>
       </div>`;
       domString += '<div class="card-columns justify-content-center ml-5 mr-5">';
@@ -65,6 +83,7 @@ const printPins = (boardId) => {
       utils.printToDom('pins', domString);
       $('body').on('click', '.goBack', closePinsView);
       $('body').on('click', '.delete-pin', deletePinEvent);
+      $('body').on('click', '#addPin', makeAPin);
     })
     .catch((err) => console.error('Problem with printPins', err));
 };

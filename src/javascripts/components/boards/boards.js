@@ -36,6 +36,27 @@ const deleteBoardEvent = (e) => {
     });
 };
 
+const makeABoard = (e) => {
+  e.preventDefault();
+  // make a new board
+  const { uid } = firebase.auth().currentUser;
+  const userId = uid;
+  const newBoard = {
+    name: $('#add-board-title').val(),
+    description: $('#add-board-desc').val(),
+    img: $('#add-board-img').val(),
+    uid: userId,
+  };
+  // save to firebase
+  boardData.addBoard(newBoard)
+    .then(() => {
+      // reprint boards
+      // eslint-disable-next-line no-use-before-define
+      printBoards();
+    })
+    .catch((err) => console.error('could not add board', err));
+};
+
 const printBoards = () => {
   const { uid } = firebase.auth().currentUser;
   boardData.getBoards(uid)
@@ -52,7 +73,7 @@ const printBoards = () => {
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class= "text-left row d-flex flex-wrap">
             <div class="form-group col-md-4">
-              <label class="" for="add-board-title">Board Title:</label>
+              <label for="add-board-title">Board Title:</label>
               <input type="text" class="form-control" id="add-board-title" placeholder="add board title here">
             </div>
             <div class="form-group col-md-4">
@@ -64,7 +85,7 @@ const printBoards = () => {
               <input type="text" class="form-control" id="add-board-img" placeholder="add board image link here">
             </div>
           </div>
-          <button type="submit" class="btn btn-danger">Submit</button>
+          <button id="addBoard" type="submit" class="btn btn-danger">Submit</button>
         </div>
       </div>`;
       domString += '<div class="card-columns justify-content-center">';
@@ -75,8 +96,9 @@ const printBoards = () => {
       utils.printToDom('boards', domString);
       $('body').on('click', '.show-pins', boardEvent);
       $('body').on('click', '.delete-btn', deleteBoardEvent);
+      $('body').on('click', '#addBoard', makeABoard);
     })
     .catch((err) => console.error('problem with printBoards', err));
 };
 
-export default { printBoards, boardEvent };
+export default { printBoards, boardEvent, makeABoard };
