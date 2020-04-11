@@ -5,6 +5,8 @@ import boardData from '../../helpers/data/boardData';
 import buildBoardsComp from '../buildBoards/buildBoards';
 import singleBoard from '../pins/pins';
 import pinsData from '../../helpers/data/pinsData';
+import showModal from '../editBoard/editBoard';
+
 import './boards.scss';
 
 const boardsDiv = $('#boards');
@@ -57,6 +59,12 @@ const makeABoard = (e) => {
     .catch((err) => console.error('could not add board', err));
 };
 
+const showModalEvent = (e) => {
+  e.preventDefault();
+  const boardId = e.target.closest('.card').id;
+  showModal.showModal(boardId);
+};
+
 const printBoards = () => {
   const { uid } = firebase.auth().currentUser;
   boardData.getBoards(uid)
@@ -87,6 +95,10 @@ const printBoards = () => {
           </div>
           <button id="addBoard" type="submit" class="btn btn-danger">Submit</button>
         </div>
+        
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div id="printModal" class="modal-dialog" role="document">
+        </div>
       </div>`;
       domString += '<div class="card-columns justify-content-center">';
       boards.forEach((board) => {
@@ -97,8 +109,11 @@ const printBoards = () => {
       $('body').on('click', '.show-pins', boardEvent);
       $('body').on('click', '.delete-btn', deleteBoardEvent);
       $('body').on('click', '#addBoard', makeABoard);
+      $('body').on('click', '#edit-a-board', showModalEvent);
     })
     .catch((err) => console.error('problem with printBoards', err));
 };
 
-export default { printBoards, boardEvent, makeABoard };
+export default {
+  printBoards, boardEvent, makeABoard, showModalEvent,
+};
