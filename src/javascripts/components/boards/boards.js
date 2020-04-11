@@ -59,6 +59,26 @@ const makeABoard = (e) => {
     .catch((err) => console.error('could not add board', err));
 };
 
+const editABoard = (e) => {
+  e.preventDefault();
+  const { uid } = firebase.auth().currentUser;
+  const userId = uid;
+  const boardId = e.target.closest('.modal-footer').id;
+  const modifiedBoard = {
+    name: $('#edit-board-name').val(),
+    description: $('#edit-board-desc').val(),
+    img: $('#edit-board-img').val(),
+    uid: userId,
+  };
+  boardData.updateBoard(boardId, modifiedBoard)
+    .then(() => {
+      // eslint-disable-next-line no-use-before-define
+      printBoards(boardId);
+    })
+    .catch((err) => console.error('could not update board', err));
+  console.error('this is the board Id', boardId);
+};
+
 const showModalEvent = (e) => {
   e.preventDefault();
   const boardId = e.target.closest('.card').id;
@@ -77,8 +97,8 @@ const printBoards = () => {
         <i class="fas fa-plus-circle"></i> add Board</button>
       </h2>
       </div>
-      <div class="form m-2">
-        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="form">
+        <div id="collapseOne" class="collapse m-2" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class= "text-left row d-flex flex-wrap">
             <div class="form-group col-md-4">
               <label for="add-board-title">Board Title:</label>
@@ -97,7 +117,7 @@ const printBoards = () => {
         </div>
         
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div id="printModal" class="modal-dialog" role="document">
+        <div id="printModal" class="modal-dialog" role="document" appendTo="body">
         </div>
       </div>`;
       domString += '<div class="card-columns justify-content-center">';
@@ -110,10 +130,15 @@ const printBoards = () => {
       $('body').on('click', '.delete-btn', deleteBoardEvent);
       $('body').on('click', '#addBoard', makeABoard);
       $('body').on('click', '#edit-a-board', showModalEvent);
+      $('body').on('click', '#save-board-edit', editABoard);
     })
     .catch((err) => console.error('problem with printBoards', err));
 };
 
 export default {
-  printBoards, boardEvent, makeABoard, showModalEvent,
+  printBoards,
+  boardEvent,
+  makeABoard,
+  showModalEvent,
+  editABoard,
 };
