@@ -16,16 +16,16 @@ const showModal = (boardId) => {
       </div>
       <div class="modal-body">
       <div class="form-group">
-        <label for="add-board-title">Board Name:</label>
-        <input type="text" class="form-control" id="edit-board-name" placeholder="add board name here" value="${board.name}">
+        <label for="edit-board-name">Board Name:</label>
+        <input type="text" class="form-control" id="edit-board-name" placeholder="edit board name here" value="${board.name}">
       </div>
       <div class="form-group">
-        <label for="add-board-desc">Board Description:</label>
-        <input type="text" class="form-control" id="edit-board-desc" placeholder="add board description here" value="${board.description}">
+        <label for="edit-board-desc">Board Description:</label>
+        <input type="text" class="form-control" id="edit-board-desc" placeholder="edit board description here" value="${board.description}">
       </div>
       <div class="form-group">
-        <label for="add-board-img">Board Image:</label>
-        <input type="text" class="form-control" id="edit-board-img" placeholder="add board image link here" value="${board.img}">
+        <label for="edit-board-img">Board Image:</label>
+        <input type="text" class="form-control" id="edit-board-img" placeholder="edit board image link here" value="${board.img}">
       </div>
       </div>
       <div id=${boardId} class="modal-footer">
@@ -35,7 +35,7 @@ const showModal = (boardId) => {
     </div>`;
       utils.printToDom('printModal', domString);
     })
-    .catch((err) => console.error('cant return modal content', err));
+    .catch((err) => console.error('cant show modal content', err));
 };
 
 export default { showModal };

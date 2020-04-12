@@ -44,7 +44,7 @@ const makeABoard = (e) => {
   const { uid } = firebase.auth().currentUser;
   const userId = uid;
   const newBoard = {
-    name: $('#add-board-title').val(),
+    name: $('#add-board-name').val(),
     description: $('#add-board-desc').val(),
     img: $('#add-board-img').val(),
     uid: userId,
@@ -76,7 +76,6 @@ const editABoard = (e) => {
       printBoards(boardId);
     })
     .catch((err) => console.error('could not update board', err));
-  console.error('this is the board Id', boardId);
 };
 
 const showModalEvent = (e) => {
@@ -101,8 +100,8 @@ const printBoards = () => {
         <div id="collapseOne" class="collapse m-2" aria-labelledby="headingOne" data-parent="#accordionExample">
           <div class= "text-left row d-flex flex-wrap">
             <div class="form-group col-md-4">
-              <label for="add-board-title">Board Title:</label>
-              <input type="text" class="form-control" id="add-board-title" placeholder="add board title here">
+              <label for="add-board-name">Board Title:</label>
+              <input type="text" class="form-control" id="add-board-name" placeholder="add board name here">
             </div>
             <div class="form-group col-md-4">
               <label for="add-board-desc">Board Description:</label>
@@ -114,10 +113,9 @@ const printBoards = () => {
             </div>
           </div>
           <button id="addBoard" type="submit" class="btn btn-danger">Submit</button>
-        </div>  
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div id="printModal" class="modal-dialog" role="document" appendTo="body">
-          </div>
+        </div>
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div id="printModal" class="modal-dialog" role="document" appendTo="body">
         </div>
       </div>`;
       domString += '<div class="card-columns justify-content-center">';
