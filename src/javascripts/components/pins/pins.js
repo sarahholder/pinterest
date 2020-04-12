@@ -42,7 +42,7 @@ const makeAPin = (e) => {
 
 const editAPin = (e, selectedPinId) => {
   e.preventDefault();
-  const boardId = e.target.closest('.card').id;
+  const boardId = e.target.closest('.card').id;g
   const { uid } = firebase.auth().currentUser;
   const userId = uid;
   const modifiedPin = {
