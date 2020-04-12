@@ -114,10 +114,10 @@ const printBoards = () => {
             </div>
           </div>
           <button id="addBoard" type="submit" class="btn btn-danger">Submit</button>
-        </div>
-        
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div id="printModal" class="modal-dialog" role="document" appendTo="body">
+        </div>  
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div id="printModal" class="modal-dialog" role="document" appendTo="body">
+          </div>
         </div>
       </div>`;
       domString += '<div class="card-columns justify-content-center">';

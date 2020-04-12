@@ -17,7 +17,7 @@ const showModal = (boardId) => {
       <div class="modal-body">
       <div class="form-group">
         <label for="add-board-title">Board Name:</label>
-        <input type="text" class="form-control" id="edit-board-name" placeholder="add board title here" value="${board.name}">
+        <input type="text" class="form-control" id="edit-board-name" placeholder="add board name here" value="${board.name}">
       </div>
       <div class="form-group">
         <label for="add-board-desc">Board Description:</label>
