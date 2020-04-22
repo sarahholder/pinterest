@@ -41,6 +41,7 @@ const deleteBoardEvent = (e) => {
 const makeABoard = (e) => {
   e.preventDefault();
   // make a new board
+  const boardId = e.target.closest('.card').id;
   const { uid } = firebase.auth().currentUser;
   const userId = uid;
   const newBoard = {
@@ -54,7 +55,7 @@ const makeABoard = (e) => {
     .then(() => {
       // reprint boards
       // eslint-disable-next-line no-use-before-define
-      printBoards();
+      printBoards(boardId);
     })
     .catch((err) => console.error('could not add board', err));
 };
@@ -124,19 +125,21 @@ const printBoards = () => {
       });
       domString += '</div>';
       utils.printToDom('boards', domString);
-      $('body').on('click', '.show-pins', boardEvent);
-      $('body').on('click', '.delete-btn', deleteBoardEvent);
-      $('body').on('click', '#addBoard', makeABoard);
-      $('body').on('click', '#edit-a-board', showModalEvent);
-      $('body').on('click', '#save-board-edit', editABoard);
     })
     .catch((err) => console.error('problem with printBoards', err));
 };
-
+const boardsClickEvents = () => {
+  $('body').on('click', '.show-pins', boardEvent);
+  $('body').on('click', '.delete-btn', deleteBoardEvent);
+  $('body').on('click', '#addBoard', makeABoard);
+  $('body').on('click', '#edit-a-board', showModalEvent);
+  $('body').on('click', '#save-board-edit', editABoard);
+};
 export default {
   printBoards,
   boardEvent,
   makeABoard,
   showModalEvent,
   editABoard,
+  boardsClickEvents,
 };
