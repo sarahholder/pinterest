@@ -1,6 +1,7 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import boards from '../../components/boards/boards';
+import boardsComponent from '../../components/boards/boards';
+import pinsComponent from '../../components/pins/pins';
 
 const authDiv = $('#auth');
 const boardsDiv = $('#boards');
@@ -18,7 +19,8 @@ const checkLoginStatus = () => {
       navHeadingDiv.addClass('hide');
       navHeadingBoardsDiv.removeClass('hide');
       navHeadingPinsDiv.addClass('hide');
-      boards.printBoards();
+      boardsComponent.printBoards();
+      pinsComponent.printPins();
     } else {
       authDiv.removeClass('hide');
       boardsDiv.addClass('hide');
@@ -28,5 +30,7 @@ const checkLoginStatus = () => {
       navHeadingPinsDiv.addClass('hide');
     }
   });
+  boardsComponent.boardsClickEvents();
+  pinsComponent.pinsClickEvents();
 };
 export default { checkLoginStatus };
