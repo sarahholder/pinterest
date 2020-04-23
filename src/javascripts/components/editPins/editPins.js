@@ -8,7 +8,7 @@ const showPinModal = (pinId) => {
       let domString = '';
       domString += `
             <div class="modal-content text-left modal2">
-              <div id="booo" class="modal-header">
+              <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel2">Edit ${wholePin.name} Pin: </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
@@ -35,7 +35,6 @@ const showPinModal = (pinId) => {
                 </div>
             </div>`;
       utils.printToDom('printPinModal', domString);
-      console.log('this is inside the modal', pinId);
     })
     .catch((err) => console.error('Cannot edit pins', err));
 };

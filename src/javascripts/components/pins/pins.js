@@ -35,7 +35,6 @@ const deletePinEvent = (e) => {
 const makeAPin = (e) => {
   const selectedBoardId = e.target.closest('.form').id;
   e.preventDefault();
-  console.log('this is the selected board . form id', selectedBoardId);
   const newPin = {
     boardId: selectedBoardId,
     name: $('#add-pin-name').val(),
@@ -50,22 +49,21 @@ const makeAPin = (e) => {
 };
 
 const editAPin = (e) => {
-  const thisIsIt = e.target.closest('.modal-body').id;
-  const boardIdVal = $('#edit-pin-board-id').val();
-  console.log('this is it');
+  const selectedPinId = e.target.closest('.modal-body').id;
+  const boardId = $('#edit-pin-board-id').val();
   e.preventDefault();
   const { uid } = firebase.auth().currentUser;
   const userId = uid;
   const modifiedPin = {
-    boardId: boardIdVal,
+    boardId: $('#edit-pin-board-id').val(),
     name: $('#edit-pin-name').val(),
     imageUrl: $('#edit-pin-img').val(),
     uid: userId,
   };
-  pins.updatePin(thisIsIt, modifiedPin)
+  pins.updatePin(selectedPinId, modifiedPin)
     .then(() => {
       // eslint-disable-next-line no-use-before-define
-      printPins(boardIdVal);
+      printPins(boardId);
     })
     .catch((err) => console.error('could not update pin', err));
 };
@@ -74,7 +72,6 @@ const showPinModalEvent = (e) => {
   e.preventDefault();
   const selectedPinId = e.target.closest('.card').id;
   showEditPinModal.showPinModal(selectedPinId);
-  console.log('showPinModalEvent .card', selectedPinId);
 };
 
 const printPins = (boardId) => {
