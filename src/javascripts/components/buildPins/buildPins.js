@@ -1,7 +1,7 @@
 const buildPins = (selectedPin) => {
   let domString = '';
   domString += `<div id="${selectedPin.id}" class="card">`;
-  domString += `  <img src="${selectedPin.imageUrl}" class="card-img-bottom alt="...">`;
+  domString += `  <img src="${selectedPin.imageUrl}" class="card-img-bottom alt="image of "${selectedPin.name}">`;
   domString += `  <div id="${selectedPin.boardId}" class="card-body m-0 p-0">`;
   domString += '      <div class="card-footer justify-content-center d-flex flex-row">';
   domString += `        <p id="findPin" data-id="${selectedPin.id}" class="card-description">${selectedPin.name}</>`;
